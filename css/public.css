@@ -1,0 +1,22 @@
+*, *:after, *:before {
+  vertical-align: top;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+html body {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: medium;
+  background: #ebebeb;
+}
+/*# sourceMappingURL=public.css.map */

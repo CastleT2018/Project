@@ -1,0 +1,29 @@
+@import '../dist/imports/pu';
+
+* {
+  &,
+  &:after,
+  &:before {
+    vertical-align: top;
+    box-sizing: border-box;
+  }
+}
+html {
+  min-height: 100%;
+  body {
+    position: relative;
+
+    display: inline-block;
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: medium;
+    background: rgba(235, 235, 235, 1);
+  }
+}
+
+
+
+
