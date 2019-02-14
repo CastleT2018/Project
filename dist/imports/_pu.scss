@@ -16,3 +16,7 @@
 @mixin rotate ($deg: 0deg) {
   transform: rotate($deg);
 }
+
+@mixin border-radius ($radius: 0) {
+  border-radius: $radius;
+}
