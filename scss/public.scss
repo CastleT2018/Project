@@ -50,7 +50,7 @@ $menuWidth: 280px;
   >* {
     float: left;
     display: inline-block;
-    @include border-red();
+    @include border-line();
   }
 }
 
@@ -62,7 +62,7 @@ $menuWidth: 280px;
   width: calc(100% - #{$menuWidth});
   height: 55px;
   padding: 0 16px;
-  @include border-red();
+  // @include border-line();
   background-color: #fff;
   text-align: left;
   @include clearfix();
@@ -70,11 +70,12 @@ $menuWidth: 280px;
   >* {
     float: left;
     display: inline-block;
-    @include border-red();
+    // @include border-line();
   }
 
   .btns {
     margin-top: 10px;
+    width: 80px;
 
     >* {
       display: inline-block;
@@ -104,10 +105,77 @@ $menuWidth: 280px;
   }
 
   .down {
-    width: 400px;
+    @include border-line (1px,transparent) ;
+    position: relative;
+    width: calc(100% - 80px - 104px - 350px - 16px);
+    // ( 100% - btns:width=80px - pagination:width=104px - share:width=350px 
+    //  - pagination:margin-left: 16px ) = down-width;
+
+    >div {
+      position: absolute;
+      display: inline-block;
+      top: 20px;
+      left: calc(50% - 15px / 2);
+      width: 15px;
+      height: 15px;
+
+      a {
+        display: inline-block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: -2px;
+        left: 0;
+        @include border-line (2px, rgba(187, 187, 187, 1));
+        border-top: 0;
+        border-left: 0;
+        cursor: pointer;
+        transition: top .3s;
+        @include rotate (45deg);
+
+        +a {
+          top: 2px;
+        }
+      }
+
+      &:hover {
+        a {
+          top: -4px;
+
+          +a {
+            top: 4px;
+          }
+        }
+      }
+    }
+
+    // a {
+    //   position: absolute;
+    //   display: inline-block;
+    //   top: $t;
+    //   left: calc(50% - 14px / 2);
+    //   width: 14px;
+    //   height: 14px;
+    //   @include border-line (2px,rgba(187, 187, 187,1));
+    //   @include rotate (45deg);
+    //   border-top: 0;
+    //   border-left: 0;
+    //   cursor: pointer;
+
+    //   + a {
+    //     top: $t + 5px;
+    //   }
+    //   &:hover {
+    //     top: $t - 1px;
+    //     + a {
+    //       top: ($t -1px) + 5px + 2px;
+    //     }
+    //   }
+    // }
   }
 
   .share {
+    width: 350px;
     margin-top: 10px;
     height: 35px;
     line-height: 35px;
@@ -125,18 +193,58 @@ $menuWidth: 280px;
     div {
       width: calc((100% - 50px) / 5); //100% - span:width:50px / a有5個
       text-align: center;
-      // @include border-red ();
 
-      // border-radius: 50%;//會變長方形 不行，用以下來做
+      // @include border-line ();
+      // border-radius: 50%;//沒有div包，會變長方形 不行
       a {
+        display: inline-block;
+        position: relative;
+        width: 30px;
+        height: 30px;
+        @include border-line (1px, rgba(203, 203, 203, 1));
+        border-radius: 50%;
         text-decoration: none;
-        line-height: 35px;
+        line-height: 30px - 2px;
+        margin-top: 5px / 2;
         color: rgba(203, 203, 203, 1);
+        z-index: 1;
+        transition: color .3s;
+
+        &:after {
+          content: '';
+          position: absolute;
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          left: calc(50% - 10px / 2);
+          top: calc(50% - 10px / 2);
+          background-color: rgba(0, 0, 0, 1);
+          z-index: -1;
+          opacity: 0;
+          overflow: hidden;
+          transition: top, left, width, height, opacity, .3s;
+          border-radius: 50%;
+        }
+
+        &:hover {
+          color: #fff;
+          border-width: 0;
+          line-height: 30px;
+
+          &:after {
+            top: -1px;
+            left: -1px;
+            width: calc(100% + 1px * 2);
+            height: calc(100% + 1px * 2);
+            opacity: 1;
+          }
+        }
       }
     }
   }
 
   .pagination {
+    width: 104px;
     margin-top: 10px;
     height: 35px;
     line-height: 35px;
