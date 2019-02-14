@@ -19,4 +19,26 @@ html body {
   font-size: medium;
   background: #ebebeb;
 }
+
+header {
+  background-image: url(/img/Products12.jpg);
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+header a {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 0;
+  font-size: 36px;
+  line-height: 36px;
+}
 /*# sourceMappingURL=public.css.map */
