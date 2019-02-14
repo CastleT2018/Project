@@ -39,7 +39,7 @@ html body {
 }
 
 #main:after {
-  display: table;
+  display: block;
   content: "";
   line-height: 0;
   clear: both;
@@ -65,7 +65,7 @@ html body {
 }
 
 #top_banner_ctrl:after {
-  display: table;
+  display: block;
   content: "";
   line-height: 0;
   clear: both;
@@ -98,6 +98,7 @@ html body {
   -webkit-transition: background-color .3s;
   -o-transition: background-color .3s;
   transition: background-color .3s;
+  border-radius: 2px;
 }
 
 #top_banner_ctrl .btns .btn:hover {
@@ -236,7 +237,7 @@ html body {
 }
 
 #top_banner_ctrl .pagination:after {
-  display: table;
+  display: block;
   content: "";
   line-height: 0;
   clear: both;

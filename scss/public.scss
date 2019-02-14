@@ -92,6 +92,7 @@ $menuWidth: 280px;
       background-color: rgba(44, 87, 137, 1);
       color: rgba(255, 255, 255, .75);
       transition: background-color .3s;
+      @include border-radius (2px);
 
       &:hover {
         background-color: rgba(0, 0, 0, 1);
@@ -105,7 +106,7 @@ $menuWidth: 280px;
   }
 
   .down {
-    @include border-line (1px,transparent) ;
+    @include border-line (1px, transparent);
     position: relative;
     width: calc(100% - 80px - 104px - 350px - 16px);
     // ( 100% - btns:width=80px - pagination:width=104px - share:width=350px 
@@ -148,30 +149,6 @@ $menuWidth: 280px;
         }
       }
     }
-
-    // a {
-    //   position: absolute;
-    //   display: inline-block;
-    //   top: $t;
-    //   left: calc(50% - 14px / 2);
-    //   width: 14px;
-    //   height: 14px;
-    //   @include border-line (2px,rgba(187, 187, 187,1));
-    //   @include rotate (45deg);
-    //   border-top: 0;
-    //   border-left: 0;
-    //   cursor: pointer;
-
-    //   + a {
-    //     top: $t + 5px;
-    //   }
-    //   &:hover {
-    //     top: $t - 1px;
-    //     + a {
-    //       top: ($t -1px) + 5px + 2px;
-    //     }
-    //   }
-    // }
   }
 
   .share {

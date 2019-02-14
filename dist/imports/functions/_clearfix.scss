@@ -2,7 +2,7 @@
   *zoom: 1;
 
   &:after{
-    display: table;
+    display: block;
     content: "";
     line-height: 0;
     clear: both;
