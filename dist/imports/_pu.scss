@@ -4,5 +4,11 @@
 
 
 @mixin border-red {
-  border: 1px solid red;
+  border: 1px solid rgba($color: #ff0000, $alpha: .5);
+}
+
+@mixin overflow-doc() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

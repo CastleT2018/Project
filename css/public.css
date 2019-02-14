@@ -21,7 +21,7 @@ html body {
 }
 
 header {
-  background-image: url(/img/Products12.jpg);
+  background-image: url(/img/character7.jpg);
   min-height: 100vh;
   background-repeat: no-repeat;
   background-position: center;
@@ -35,10 +35,8 @@ header a {
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
-  -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-          box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
   border-radius: 0;
-  font-size: 36px;
-  line-height: 36px;
 }
 /*# sourceMappingURL=public.css.map */
