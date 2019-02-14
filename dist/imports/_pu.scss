@@ -1,2 +1,8 @@
 @import 'functions/clearfix';
 @import 'functions/range-width';
+
+
+
+@mixin border-red {
+  border: 1px solid red;
+}
