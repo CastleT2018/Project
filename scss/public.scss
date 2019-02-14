@@ -1,6 +1,7 @@
 @import '../dist/imports/pu';
 
 * {
+
   &,
   &:after,
   &:before {
@@ -8,8 +9,10 @@
     box-sizing: border-box;
   }
 }
+
 html {
   min-height: 100%;
+
   body {
     position: relative;
 
@@ -24,6 +27,125 @@ html {
   }
 }
 
+#top_banner {
+  display: inline-block;
+  width: 100%;
+  // height: 500px;
+  overflow: hidden;
 
+  img {
+    display: inline-block;
+    width: 100%;
+  }
+}
 
+$menuWidth: 280px;
 
+#main {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  @include clearfix();
+
+  >* {
+    float: left;
+    display: inline-block;
+    @include border-red();
+  }
+}
+
+#top_banner_ctrl {
+  position: absolute;
+  top: -45px;
+  left: $menuWidth;
+  display: inline-block;
+  width: calc(100% - #{$menuWidth});
+  height: 45px;
+  padding: 0 16px;
+  @include border-red();
+  background-color: #fff;
+  text-align: left;
+  @include clearfix();
+
+  >* {
+    float: left;
+    display: inline-block;
+    @include border-red();
+  }
+
+  .btn {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    margin-top: 5px;
+    cursor: pointer;
+    text-align: center;
+    background-color: rgba(44, 87, 137, 1);
+    color: rgba(255, 255, 255, .75);
+    transition: background-color .3s;
+    &:hover {
+      background-color: rgba(0 ,0 , 0, 1);
+      color: rgba(255, 255, 255, 1);
+    }
+  }
+}
+
+#menu {
+  width: $menuWidth;
+  background-color: rgba(44, 87, 137, 1);
+
+  a {
+    position: relative;
+    z-index: 1;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    color: rgba(255, 255, 255, .75);
+    transition: color, background-color, .3s;
+    cursor: pointer;
+    @include overflow-doc();
+
+    &:after {
+      content: '';
+      z-index: -1;
+      position: absolute;
+      top: calc(50% - 10px / 2);
+      left: calc(50% - 10px / 2);
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background-color: rgba(0, 0, 0, 1);
+      //動畫效果方法1以下
+      transition: top, left, width, height, opacity, .3s;
+      opacity: 0;
+      //動畫效果方法2以下
+      // transform: scale(0) ; 
+      // transition: transform .3s;
+    }
+
+    &:hover {
+      color: rgba(255, 255, 255, 1);
+
+      // background-color: #000;
+      //動畫效果方法1以下
+      &:after {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+      }
+
+      //動畫效果方法2以下
+      // &:after {
+      //   transform: scale(30); //because $menuWidth: 280px a:after width: 10px 放大30倍
+      // }
+    }
+  }
+}
+
+#content {
+  width: calc(100% - #{$menuWidth});
+
+}
